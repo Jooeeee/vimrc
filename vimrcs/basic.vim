@@ -37,6 +37,15 @@ set history=500
 filetype plugin on
 filetype indent on
 
+" line number
+set nu
+set relativenumber
+augroup relative_numbser
+    autocmd!
+    autocmd InsertEnter * :set norelativenumber
+    autocmd InsertLeave * :set relativenumber
+augroup END
+
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
